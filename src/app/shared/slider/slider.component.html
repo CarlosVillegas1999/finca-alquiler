@@ -1,0 +1,14 @@
+<!-- slider.component.html -->
+<div class="slider">
+    <div class="slides">
+        <div class="slide" *ngFor="let slide of slides; let i = index" [ngClass]="{'active': i + 1 === slideIndex}">
+            <img [src]="slide.src" [alt]="slide.alt">
+        </div>
+    </div>
+    <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+    <a class="next" (click)="plusSlides(1)">&#10095;</a>
+    <div class="indicators">
+        <span *ngFor="let slide of slides; let i = index" (click)="currentSlide(i + 1)"
+            [ngClass]="{'active': i + 1 === slideIndex}"></span>
+    </div>
+</div>
